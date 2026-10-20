@@ -14,12 +14,12 @@
 body{margin:0;background:var(--bg);color:#233;}
 header{background:linear-gradient(90deg,var(--red),var(--blue));color:#fff;padding:24px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.2)}
 header .worten-resolve-logo{margin:0 auto 8px;display:flex;justify-content:center;align-items:center;line-height:1}
-header .worten-resolve-logo img{display:block;width:min( min(440px, 68vw), 100%);height:auto;max-height:58px;object-fit:contain}
-@media(max-width:600px){header .worten-resolve-logo img{width:min(78%, 320px);max-height:44px}}
+header .worten-resolve-logo img{display:block;width:min( min(260px, 48vw), 100%);height:auto;max-height:34px;object-fit:contain}
+@media(max-width:600px){header .worten-resolve-logo img{width:min(62%, 210px);max-height:28px}}
 
 /* --- Atalhos flutuantes minimalistas --- */
-.atalhos-externos{max-width:1300px;margin:0 auto;padding:16px 20px 0}
-.atalhos-externos-grelha{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap}
+.atalhos-externos{max-width:1300px;margin:0 auto;padding:16px 20px 0;width:100%}
+.atalhos-externos-grelha{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:nowrap;white-space:nowrap}
 .atalho-externo{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:8px 14px;background:rgba(255,255,255,.94);color:#263247;text-decoration:none;border:1px solid #e4e8f1;border-radius:999px;font-size:13px;font-weight:650;box-shadow:0 4px 13px rgba(20,35,70,.07);transition:all .18s ease}
 .atalho-externo:hover{background:#fff;border-color:#cbd5ff;box-shadow:0 7px 18px rgba(0,40,245,.12);transform:translateY(-2px);color:var(--blue)}
 .atalho-icone{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;flex:0 0 30px;border-radius:9px;background:#f0f3ff;color:var(--blue)}
@@ -48,6 +48,17 @@ header .worten-resolve-logo img{display:block;width:min( min(440px, 68vw), 100%)
 .guia-conteudo li{padding-left:3px;margin:5px 0}
 .guia-nota{border-left:3px solid var(--blue);background:#f5f7ff;border-radius:0 9px 9px 0;padding:11px 13px;margin-top:14px}
 @media(prefers-reduced-motion:reduce){#guia-overlay,#guia-modal{transition:none!important;transform:none!important}}
+/* Prioridade: atalhos numa única linha; quando falta largura, passam para uma coluna lateral */
+@media(max-width:1120px){
+  .atalhos-externos{position:fixed;left:8px;top:108px;z-index:900;max-width:none;width:auto;margin:0;padding:0}
+  .atalhos-externos-grelha{flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;white-space:normal}
+  .atalho-externo{width:44px;min-width:44px;height:44px;min-height:44px;padding:6px;gap:0;border-radius:12px;justify-content:center;overflow:hidden}
+  .atalho-externo .atalho-nome,.atalho-externo .atalho-seta{display:none}
+  .atalho-icone{width:30px;height:30px;flex:0 0 30px}
+  .atalho-ajuda{width:44px;height:44px;min-width:44px;flex:0 0 44px;border-radius:12px}
+  .container{padding-left:68px}
+}
+@media(max-width:600px){.atalhos-externos{top:94px;left:6px;padding:0}.atalhos-externos-grelha{gap:7px}.atalho-externo{width:40px;min-width:40px;height:40px;min-height:40px;padding:5px;border-radius:11px}.atalho-icone{width:27px;height:27px;flex-basis:27px}.atalho-ajuda{width:40px;height:40px;min-width:40px;flex-basis:40px}}
 @media(max-width:600px){.atalhos-externos{padding:12px 12px 0}.atalhos-externos-grelha{gap:7px}.atalho-externo{min-height:38px;padding:6px 10px;font-size:12px;gap:6px}.atalho-icone{width:27px;height:27px;flex-basis:27px;border-radius:8px}.atalho-icone svg{width:16px;height:16px}.atalho-ajuda{width:38px;height:38px;min-width:38px}#guia-modal{padding:18px;border-radius:16px}.guia-titulo{font-size:21px}.guia-tab{padding:7px 10px}}
 
 .container{max-width:1300px;margin:auto;padding:20px}
