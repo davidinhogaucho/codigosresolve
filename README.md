@@ -1,3 +1,5 @@
+Worten Resolve — Códigos Técnicos
+
 📌 Sobre o projeto
 Este projeto foi desenvolvido para a Worten Resolve, com o objetivo de facilitar o trabalho diário dos colaboradores, reunindo num único local códigos técnicos, artigos, serviços e ferramentas úteis.
 A plataforma permite pesquisar rapidamente informações relevantes para o atendimento ao cliente e para os procedimentos realizados em loja.
